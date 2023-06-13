@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: mall-product
+  datasource:
+    url: jdbc:mysql://localhost:3306/hz_mall
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ahui940722
+mybatis:
+  mapper-locations: classpath*:mapping/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9502/eureka/
